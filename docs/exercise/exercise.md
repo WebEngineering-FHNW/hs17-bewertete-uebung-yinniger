@@ -10,7 +10,10 @@ My idea is to create journaling app for programming mistakes or code snippets. T
 
 ## Project confirmation
 
-< to be filled by lecturer>
+confirmed.
+
+Very nice. I like that you take up the idea.
+Go for it!
 
 
 ## Project delivery <to be filled by student>
