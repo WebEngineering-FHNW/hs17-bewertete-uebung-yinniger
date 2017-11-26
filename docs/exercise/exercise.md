@@ -2,10 +2,11 @@
 
 ## Commit Proposal
 
-Matriculation Number: <to be filled by student>
+Matriculation Number: 15-652-654
 
 Project idea short description: 
 
+My idea is to create journaling app for programming mistakes or code snippets. The app will provide a form in which you can enter your mistake or a code snippet and a list of all previous entries.
 
 ## Project confirmation
 
