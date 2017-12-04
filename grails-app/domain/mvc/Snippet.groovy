@@ -1,16 +1,22 @@
 package mvc
 
-class Snippet extends AbstractEntry {
+class Snippet extends Entry {
 
     private String snippet
 
     Snippet(String name, Language language, String snippet) {
         super(name, language)
+        this.snippet = snippet
     }
 
     @Override
     String toString() {
         return super.getName() + " : " + snippet
+    }
+
+    @Override
+    String getContent() {
+        return snippet
     }
 
     String getSnippet() {

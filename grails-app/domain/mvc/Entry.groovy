@@ -1,6 +1,6 @@
 package mvc
 
-abstract class AbstractEntry {
+abstract class Entry {
 
     enum Language {
         JAVA, PYTHON, PHP, BASH, GIT, DOCKER, JAVASCRIPT, CSS
@@ -9,10 +9,12 @@ abstract class AbstractEntry {
     private String name
     private Language language
 
-    AbstractEntry(String name, Language language) {
+    Entry(String name, Language language) {
         this.name = name
         this.language = language
     }
+
+    abstract String getContent()
 
     String getName() {
         return name
@@ -29,6 +31,7 @@ abstract class AbstractEntry {
     void setLanguage(Language language) {
         this.language = language
     }
+
     static constraints = {
         id(blank: false)
         name(blank: false)

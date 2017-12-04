@@ -1,6 +1,6 @@
 package mvc
 
-class Mistake extends AbstractEntry {
+class Mistake extends Entry {
 
     private String errorMessage
     private String solution
@@ -16,6 +16,10 @@ class Mistake extends AbstractEntry {
         return super.getName() + " : " + errorMessage + " : " + solution
     }
 
+    @Override
+    String getContent() {
+        return "'" + errorMessage + "'" + " solved with: " + "'" + solution + "'"
+    }
 
     String getErrorMessage() {
         return errorMessage

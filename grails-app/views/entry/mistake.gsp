@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Entry</title>
+</head>
+<body>
+<ul>
+    <li>
+        <label>Name</label>
+        <label>${mistake.getName()}</label>
+    </li>
+    <li>
+        <label>Language</label>
+        <label>${mistake.getLanguage()}</label>
+    </li>
+    <li>
+        <label>Error</label>
+        <label>${mistake.getErrorMessage()}</label>
+    </li>
+    <li>
+        <label>Solution</label>
+        <label>${mistake.getSolution()}</label>
+    </li>
+</ul>
+</body>
+</html>
