@@ -3,6 +3,7 @@
     <meta name="layout" content="main">
     <title>Journal</title>
 </head>
+
 <body>
 Available Entries:
 <table>
@@ -13,7 +14,7 @@ Available Entries:
     </tr>
     <g:each var="entry" in="${entries}">
         <tr>
-            <td>${entry.getName()}</td>
+            <td><a href="/${entry.getClass().simpleName.toLowerCase()}/show?id=${entry.getId()}">${entry.getName()}</a></td>
             <td>${entry.getLanguage()}</td>
             <td>${entry.getContent()}</td>
         </tr>

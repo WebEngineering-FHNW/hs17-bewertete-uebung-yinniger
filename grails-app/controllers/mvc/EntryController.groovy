@@ -4,15 +4,16 @@ class EntryController {
 
     def showEntry(int id) {
         List<Entry> entries = getEntries()
+        id = id - 1
         if (id >= entries.size()) {
             render(status: 404, text: 'Entry with id ' + id + ' not found')
             return
         }
 
-        Entry entry = getEntries().get(id - 1)
+        Entry entry = getEntries().get(id)
         if(entry.instanceOf(Mistake)) {
             Mistake mistake = (Mistake)entry
-            render view: 'mistake', model: [mistake: mistake]
+            render view: '/mistake/show', model: [mistake: mistake]
         } else if(entry.instanceOf(Snippet)) {
             render view: 'snippet', model: [snippet: entry]
         } else {
