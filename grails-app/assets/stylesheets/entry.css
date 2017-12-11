@@ -1,0 +1,9 @@
+input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+form>label {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
