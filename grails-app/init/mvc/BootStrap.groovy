@@ -24,6 +24,8 @@ class BootStrap {
         save(new Mistake(name: "Test", language: Entry.Language.BASH, errorMessage: "sido", solution: "sudo"))
         save(new Mistake(name: "Test", language: Entry.Language.BASH, errorMessage: "docker-composer", solution: "docker-compose"))
         save(new Mistake(name: "Test", language: Entry.Language.BASH, errorMessage: "find brot", solution: "locate brot"))
+        save(new Snippet(name: "Brot", language: Entry.Language.JAVA, snippet: "import abc.d"))
+        save(new Snippet(name: "S2", language: Entry.Language.JAVA, snippet: "int i = 0"))
     }
 
     static save(domainObject) {
