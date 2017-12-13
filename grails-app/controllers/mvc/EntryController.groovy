@@ -1,5 +1,8 @@
 package mvc
 
+import groovy.json.JsonBuilder
+import org.springframework.validation.FieldError
+
 class EntryController {
 
     def showEntry(int id) {
