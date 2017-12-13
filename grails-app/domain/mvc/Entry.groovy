@@ -14,8 +14,6 @@ abstract class Entry {
         this.language = language
     }
 
-    abstract String getContent()
-
     String getName() {
         return name
     }

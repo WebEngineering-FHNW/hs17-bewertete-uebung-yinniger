@@ -13,11 +13,6 @@ class Mistake extends Entry {
 
     @Override
     String toString() {
-        return super.getName() + " : " + errorMessage + " : " + solution
-    }
-
-    @Override
-    String getContent() {
         return "'" + errorMessage + "'" + " solved with: " + "'" + solution + "'"
     }
 

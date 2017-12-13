@@ -11,11 +11,6 @@ class Snippet extends Entry {
 
     @Override
     String toString() {
-        return super.getName() + " : " + snippet
-    }
-
-    @Override
-    String getContent() {
         return snippet
     }
 
