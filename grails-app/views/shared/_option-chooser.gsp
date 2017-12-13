@@ -1,8 +1,9 @@
-<div class="row">
-    <div class="col-md-1">
+<div class="col-md-3">
+    <div class="row field-description">
         <label>${desc}</label>
     </div>
-    <div class="col-md-2">
+
+    <div class="row field-input">
         <select class="option-select" name="${name}">
             <g:if test="${selected.toString() == ""}">
                 <option class="no-select" value="" selected disabled hidden>Choose language..</option>

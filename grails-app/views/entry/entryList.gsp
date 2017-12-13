@@ -16,7 +16,7 @@ Available Entries:
         <tr>
             <td><a href="/${entry.getClass().simpleName.toLowerCase()}/show?id=${entry.getId()}">${entry.getName()}</a></td>
             <td>${entry.getLanguage()}</td>
-            <td>${entry.getContent()}</td>
+            <td>${entry.toString()}</td>
         </tr>
     </g:each>
 </table>
