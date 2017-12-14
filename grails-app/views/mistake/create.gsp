@@ -9,18 +9,30 @@
 <tmpl:/shared/flash-message successMessage="Your Mistake was successfully created"/>
 <tmpl:/shared/sidebar/>
 <div class="container-fluid">
-    <h2>Create Mistake</h2>
+
+    <div class="row header-div">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+            <h2 class="header-text">
+                Create Mistake
+            </h2>
+            <i id="edit-ico" class="material-icons icon-btn">save</i>
+        </div>
+    </div>
+
     <input id="type" type="hidden" value="mistake"/>
 
     <form id="entry-form">
-        <tmpl:/shared/row desc="Name" name="name" value=""/>
-        <tmpl:/shared/option-chooser desc="Language" name="language" options="${Entry.Language}" selected=""/>
-        <tmpl:/shared/row desc="Error" name="errorMessage" value=""/>
-        <tmpl:/shared/row desc="Solution" name="solution" value=""/>
         <div class="row">
-            <div class="col-md-3 right">
-                <input id="save-btn" class="btn btn-primary" type="button" value="Save">
-            </div>
+            <div class="col-md-3"></div>
+            <tmpl:/shared/row desc="Name" name="name" value=""/>
+            <tmpl:/shared/option-chooser desc="Language" name="language" options="${Entry.Language}" selected=""/>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <tmpl:/shared/row desc="Error" name="errorMessage" value=""/>
+            <tmpl:/shared/row desc="Solution" name="solution" value=""/>
         </div>
     </form>
 </div>

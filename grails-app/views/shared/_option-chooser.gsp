@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div class="col-md-3 field">
     <div class="row field-description">
         <label>${desc}</label>
     </div>

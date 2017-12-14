@@ -12,7 +12,8 @@ input {
     padding-bottom: 8px;
     padding-top: 8px;
     margin-left: 15px !important;
-    width: 15em;
+    width: 11vw;
+    min-width: 200px;
 }
 
 input:-moz-read-only {
@@ -31,7 +32,7 @@ label.disabled {
     color: #BDBDBD;
 }
 
-input.typing {
+input.typing, select.typing {
     border-color: #9C27B0;
 }
 
@@ -46,7 +47,8 @@ select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: 15em;
+    width: 11vw;
+    min-width: 200px;
 }
 
 select:disabled {
@@ -62,7 +64,7 @@ option {
     margin-bottom: 15px;
 }
 
-form>label {
+form > label {
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -82,7 +84,11 @@ form>label {
     background: #00AA8D;
     margin-top: 0;
     padding-top: 40px;
-    padding-bottom: 20px
+    padding-bottom: 20px;
+}
+
+.header-div>div {
+    display: flex;
 }
 
 label {
@@ -104,7 +110,7 @@ label:disabled {
 .input-error {
     border-color: #C51162;
     color: #C51162;
- }
+}
 
 .container-fluid {
     margin-left: 4em;
@@ -115,7 +121,7 @@ label:disabled {
     display: flex;
     justify-items: center;
     align-items: center;
-    color: white ;
+    color: white;
     margin-bottom: 0;
     border-radius: 0;
 }
@@ -136,18 +142,28 @@ label:disabled {
     background: #EEEEEE;
     min-width: 4em;
     min-height: 100%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 #flash-messages {
     margin-left: 4em;
 }
 
+.icon-btn {
+    margin-left: 25px;
+    cursor: pointer;
+    padding-top: 27px;
+    color: white;
+}
+
+/*
+external code http://google.github.io/material-design-icons/
+*/
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: 24px; /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;

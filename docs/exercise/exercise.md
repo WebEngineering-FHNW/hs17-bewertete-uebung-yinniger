@@ -26,6 +26,10 @@ Project description:      (if other than `/index.html`)
 
 External contributions:
 
+https://stackoverflow.com/questions/28206255/groovy-simple-json-array-builder
+
+http://google.github.io/material-design-icons/
+
 Other comments: 
 
 I'm particular proud of:
