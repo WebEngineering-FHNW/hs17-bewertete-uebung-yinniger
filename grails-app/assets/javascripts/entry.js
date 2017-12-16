@@ -2,96 +2,42 @@ var flashMessageTimeout = 5000;
 
 $(document).ready(function () {
     var showOnly = $('.show-only');
-    var saveButton = $('#save-btn');
     var fields = $('.field');
-
-    var inputs = showOnly.find('input');
-    var selects = showOnly.find('select');
-    var labels = showOnly.find('label');
 
     // disable inputs for show-only fields
     if (showOnly.length !== 0) {
-
-        $('.show-only #save-btn').hide();
-        inputs.each(function () {
-            $(this).prop('readonly', true);
-        });
-        selects.each(function () {
-            $(this).prop('disabled', true);
-        });
-        labels.each(function () {
-            $(this).addClass('disabled');
-        });
-
-        $('#edit-btn').click(function () {
-            $('#save-btn').prop('disabled', false);
-            inputs.each(function () {
-                $(this).prop('readonly', false);
-            });
-            selects.each(function () {
-                $(this).prop('disabled', false);
-            });
-            labels.each(function () {
-                $(this).removeClass('disabled');
-            });
-            saveButton.show();
-            $(this).hide();
+        fields.each(function () {
+            switchField(this, true);
         });
     }
 
     fields.on('keyup', function () {
-        var input = $(this).find('input').first();
-        var label = $(this).find('label').first();
+        var input = findInput(this);
         if (input.val() === "") {
-            input.removeClass('typing');
-            label.removeClass('typing');
-            input.addClass('input-error');
-            label.addClass('input-error');
-            input.attr('placeholder', 'Value missing');
+            console.log('test')
+            setFieldError(this);
             $('#save-btn').prop('disabled', true);
         } else {
-            if (input.hasClass('input-error')) {
-                input.removeClass('input-error');
-                label.removeClass('input-error');
-                input.addClass('typing');
-                label.addClass('typing');
-            }
+            setFieldTyping(this);
             $('#save-btn').prop('disabled', false);
         }
     });
 
     fields.focusout(function () {
-        $(this).find('input').first().removeClass('typing');
-        $(this).find('label').first().removeClass('typing');
-        $(this).find('select').first().removeClass('typing');
+        removeTyping(this)
     });
 
     fields.focusin(function () {
-        var input = $(this).find('input').first();
-        if (!input.hasClass('input-error') && !input.is('[readonly]')) {
-            input.addClass('typing');
-            $(this).find('label').first().addClass('typing');
-            $(this).find('select').first().addClass('typing');
-        }
+        setFieldTyping(this);
     });
 
     $('#edit-ico').click(function () {
-        // for show view
-        if(showOnly.length !== 0) {
-            $('#save-btn').prop('disabled', false);
-            inputs.each(function () {
-                $(this).prop('readonly', false);
-            });
-            selects.each(function () {
-                $(this).prop('disabled', false);
-            });
-            labels.each(function () {
-                $(this).removeClass('disabled');
+        if($(this).text() === 'mode_edit') {
+            fields.each(function () {
+               switchField(this, false);
             });
             $(this).text('save');
-        }
-
-        $(this).click(function () {
+        } else {
             $.ajax({
                 url: '/' + $('#type').val() + '/save',
                 type: 'post',
@@ -104,9 +50,17 @@ $(document).ready(function () {
                     createErrorMessage(errorJson);
                 }
             });
-        })
-    })
+        }
+    });
 
+});
+
+$(window).load(function () {
+   resizeTextField();
+});
+
+$(window).resize(function () {
+    resizeTextField();
 });
 
 function createErrorMessage(errorJson) {
@@ -116,9 +70,10 @@ function createErrorMessage(errorJson) {
             message += ' and ' + errorJson.errors[i].field;
         }
         var input = $('input[name=' + errorJson.errors[i].field + ']');
-        input.closest('.field').find('label').first().addClass('input-error');
-        input.addClass('input-error');
-        input.attr('placeholder', 'Value missing');
+        if(input.length === 0) {
+            input = $('textarea[name=' + errorJson.errors[i].field + ']');
+        }
+        setFieldError(input.closest('.field'));
     }
 
     message += ' cannot be empty';
@@ -137,4 +92,70 @@ function showSuccessMessage() {
     setTimeout(function () {
         $('#success-message').hide('slow');
     }, flashMessageTimeout);
+}
+
+function resizeTextField() {
+    if($(window).width() <= 991) {
+        $('.snippet-field').width(190);
+    } else if($('input').width() === 200) {
+        $('.snippet-field').width($('.field-input').width() + 188);
+    } else {
+        $('.snippet-field').width($('.field-input').width() * 1.42);
+    }
+}
+
+function findInput(field) {
+    var possibleInputs = ['input', 'textarea', 'select'];
+    var input = $(field).find(possibleInputs[0]).first();
+    for (var i = 1; i !== possibleInputs.length && input.length === 0; ++i) {
+        input = $(field).find(possibleInputs[i]).first();
+    }
+    return input;
+}
+
+function setFieldTyping(field) {
+    var input = findInput(field);
+    var label = $(field).find('label').first();
+
+    if (input.hasClass('input-error')) {
+        input.removeClass('input-error');
+        label.removeClass('input-error');
+    }
+    if(!input.is('[readonly]')) {
+        input.addClass('typing');
+        label.addClass('typing');
+    }
+}
+
+function setFieldError(field) {
+    var input = findInput(field);
+    var label = $(field).find('label').first();
+
+    if (input.hasClass('typing')) {
+        input.removeClass('typing');
+        label.removeClass('typing');
+    }
+    input.addClass('input-error');
+    label.addClass('input-error');
+    input.attr('placeholder', 'Value missing');
+}
+
+function removeTyping(field) {
+    var input = findInput(field);
+    input.removeClass('typing');
+    $(field).find('label').first().removeClass('typing');
+}
+
+function switchField(field, disable) {
+    var input = findInput(field);
+    if(input.get(0).localName === 'select') {
+        input.prop('disabled', disable);
+    } else {
+        input.prop('readonly', disable);
+    }
+    if(disable) {
+        $(field).find('label').first().addClass('disabled');
+    } else {
+        $(field).find('label').first().removeClass('disabled');
+    }
 }

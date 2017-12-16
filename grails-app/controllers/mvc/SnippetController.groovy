@@ -18,4 +18,8 @@ class SnippetController {
         }
         render view: 'show', model: [snippet: foundSnippets.get(0)]
     }
+
+    def create() {
+        render view: 'create'
+    }
 }

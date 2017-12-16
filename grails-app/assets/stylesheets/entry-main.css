@@ -36,6 +36,33 @@ input.typing, select.typing {
     border-color: #9C27B0;
 }
 
+.snippet-field {
+    margin-left: 15px;
+    padding-top: 25px;
+    padding-left: 10px;
+    resize: none;
+    border: 1px solid #616161;
+    height: 200px;
+}
+
+.snippet-field:read-only {
+    color: #BDBDBD;
+}
+
+.snippet-field:-moz-read-only {
+    color: #BDBDBD;
+}
+
+.snippet-field.typing {
+    border: 1px solid #9C27B0;
+}
+
+.snippet-label {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
 select {
     border: 0;
     outline: 0;
@@ -113,7 +140,6 @@ label:disabled {
 }
 
 .container-fluid {
-    margin-left: 4em;
     padding-right: 0;
 }
 
@@ -123,6 +149,7 @@ label:disabled {
     align-items: center;
     color: white;
     margin-bottom: 0;
+    width: 100%;
     border-radius: 0;
 }
 
@@ -145,15 +172,15 @@ label:disabled {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-#flash-messages {
-    margin-left: 4em;
-}
-
 .icon-btn {
     margin-left: 25px;
     cursor: pointer;
     padding-top: 27px;
     color: white;
+}
+
+#edit-ico:active {
+    color: #616161;
 }
 
 /*

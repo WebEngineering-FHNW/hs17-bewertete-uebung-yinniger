@@ -14,13 +14,13 @@
 
         <div class="col-md-6">
             <h2 class="header-text">
-                Create Mistake
+                New Snippet
             </h2>
             <i id="edit-ico" class="material-icons icon-btn">save</i>
         </div>
     </div>
 
-    <input id="type" type="hidden" value="mistake"/>
+    <input id="type" type="hidden" value="snippet"/>
 
     <form id="entry-form">
         <div class="row">
@@ -30,8 +30,7 @@
         </div>
         <div class="row">
             <div class="col-md-3"></div>
-            <tmpl:/shared/row desc="Error" name="errorMessage" value=""/>
-            <tmpl:/shared/row desc="Solution" name="solution" value=""/>
+            <tmpl:/shared/textarea/>
         </div>
     </form>
 </div>
