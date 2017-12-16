@@ -1,5 +1,7 @@
 package mvc
 
+import grails.web.databinding.WebDataBinding
+
 class Mistake extends Entry {
 
     private String errorMessage
@@ -9,6 +11,7 @@ class Mistake extends Entry {
         super(name, language)
         this.errorMessage = errorMessage
         this.solution = solution
+        print(getProperties())
     }
 
     @Override
@@ -30,6 +33,12 @@ class Mistake extends Entry {
 
     void setSolution(String solution) {
         this.solution = solution
+    }
+
+    @Override
+    Map<?, ?> getProperties() {
+        String[] order = ["name", "language", "errorMessage", "solution"]
+        return super.sortProperties(order)
     }
 
     static constraints = {

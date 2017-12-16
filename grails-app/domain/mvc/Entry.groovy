@@ -35,4 +35,14 @@ abstract class Entry {
         name(blank: false)
         language(blank: false)
     }
+
+    protected sortProperties(String[] order) {
+        Map<?, ?> properties = new LinkedHashMap<>()
+        Object current
+        for(int i = 0; i != order.length; ++i) {
+            current = getProperty(order[i])
+            properties.put(order[i], current)
+        }
+        return properties
+    }
 }

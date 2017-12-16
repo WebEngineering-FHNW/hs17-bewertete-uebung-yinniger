@@ -1,5 +1,7 @@
 package mvc
 
+import grails.web.databinding.WebDataBinding
+
 class Snippet extends Entry {
 
     private String snippet
@@ -20,6 +22,12 @@ class Snippet extends Entry {
 
     void setSnippet(String snippet) {
         this.snippet = snippet
+    }
+
+    @Override
+    Map<?, ?> getProperties() {
+        String[] order = ["name", "language", "snippet"]
+        return super.sortProperties(order)
     }
 
     static constraints = {
