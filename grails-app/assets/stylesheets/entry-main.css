@@ -4,6 +4,27 @@ body {
     font-family: 'Roboto', sans-serif !important;
 }
 
+.row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.container-fluid {
+    padding-right: 0;
+}
+
+.field-input {
+    margin-top: 0;
+}
+
+.input-error {
+    border-color: #F44336 !important;
+    color: #F44336;
+}
+
+
+/************* INPUT *************/
+
 input {
     border: 0;
     outline: 0;
@@ -24,17 +45,12 @@ input:read-only {
     color: #BDBDBD;
 }
 
-label.typing {
-    color: #9C27B0;
-}
-
-label.disabled {
-    color: #BDBDBD;
-}
-
 input.typing, select.typing {
     border-color: #9C27B0;
 }
+
+
+/************* TEXTAREA *************/
 
 .snippet-field {
     margin-left: 15px;
@@ -57,11 +73,8 @@ input.typing, select.typing {
     border: 1px solid #9C27B0;
 }
 
-.snippet-label {
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 8px;
-}
+
+/************* SELECT *************/
 
 select {
     border: 0;
@@ -86,37 +99,8 @@ option {
     padding-left: 0;
 }
 
-.row {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
 
-form > label {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.field-description {
-    margin-bottom: 0;
-}
-
-.header-text {
-    margin-left: 0px !important;
-    font-size: 32px;
-    color: white;
-    border: 0px none;
-}
-
-.header-div {
-    background: #00AA8D;
-    margin-top: 0;
-    padding-top: 40px;
-    padding-bottom: 20px;
-}
-
-.header-div>div {
-    display: flex;
-}
+/************* LABEL *************/
 
 label {
     font-weight: normal !important;
@@ -130,18 +114,39 @@ label:disabled {
     color: #BDBDBD;
 }
 
-.field-input {
-    margin-top: 0;
+label.typing {
+    color: #9C27B0;
 }
 
-.input-error {
-    border-color: #C51162;
-    color: #C51162;
+label.disabled {
+    color: #BDBDBD;
 }
 
-.container-fluid {
-    padding-right: 0;
+form > label {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
+
+.snippet-label {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+.field-description {
+    margin-bottom: 0;
+}
+
+
+
+/************* HEADER *************/
+
+.header-div>div {
+    display: flex;
+}
+
+
+/************* ALERTS *************/
 
 .alert {
     display: flex;
@@ -151,6 +156,7 @@ label:disabled {
     margin-bottom: 0;
     width: 100%;
     border-radius: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); /* external code https://codepen.io/sdthornton/pen/wBZdXq */
 }
 
 #success-message {
@@ -159,54 +165,15 @@ label:disabled {
 }
 
 #fail-message {
-    background: #C51162;
-    border-color: #C51162;
+    background: #F44336;
+    border-color: #F44336;
 }
 
-#sidebar {
-    position: absolute;
-    float: left;
-    background: #EEEEEE;
-    min-width: 4em;
-    min-height: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
 
-.icon-btn {
-    margin-left: 25px;
-    cursor: pointer;
-    padding-top: 27px;
-    color: white;
-}
+/************* BACK BUTTON *************/
 
-#edit-ico:active {
-    color: #616161;
-}
-
-/*
-external code http://google.github.io/material-design-icons/
-*/
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px; /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    font-feature-settings: 'liga';
+#back-ico {
+    padding-top: 23px;
+    font-size: 30px;
+    margin-right: 15px;
 }

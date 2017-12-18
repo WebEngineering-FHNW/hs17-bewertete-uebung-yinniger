@@ -57,10 +57,12 @@ $(document).ready(function () {
 
 $(window).load(function () {
    resizeTextField();
+   postionFloatingButton();
 });
 
 $(window).resize(function () {
     resizeTextField();
+    postionFloatingButton();
 });
 
 function createErrorMessage(errorJson) {
@@ -158,4 +160,9 @@ function switchField(field, disable) {
     } else {
         $(field).find('label').first().removeClass('disabled');
     }
+}
+
+function postionFloatingButton() {
+    var inputWidth = $('input').width();
+    $('#circle').css('margin-left', inputWidth - 35);
 }

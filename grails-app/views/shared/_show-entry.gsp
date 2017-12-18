@@ -2,16 +2,7 @@
 <tmpl:/shared/flash-message successMessage="Your ${entry.getClass().getSimpleName()} was successfully changed"/>
 <div class="container-fluid">
 
-    <div class="row header-div">
-        <div class="col-md-3"></div>
-
-        <div class="col-md-6">
-            <h2 class="header-text">
-                ${entry.getName()}
-            </h2>
-            <i id="edit-ico" class="material-icons icon-btn">mode_edit</i>
-        </div>
-    </div>
+    <tmpl:/shared/header-show name="${entry.getName()}"/>
 
     <input id="type" type="hidden" value="${entry.getClass().getSimpleName().toLowerCase()}"/>
 

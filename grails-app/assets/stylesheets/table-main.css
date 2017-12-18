@@ -1,0 +1,72 @@
+/************* TABLE *************/
+table {
+    border: none;
+    width: 100%;
+    margin-top: 25px;
+}
+
+th {
+    color: #616161;
+    font-weight: normal;
+    text-align: left;
+    height: 64px;
+    padding-right: 56px;
+    border: none;
+    border-bottom: 1px solid #616161;
+    min-width: 40px;
+}
+
+td {
+    min-width: 40px;
+    height: 48px;
+    padding-right: 56px;
+    min-width: 40px;
+}
+
+a {
+    color: #333;
+}
+
+.first-row {
+    padding-left: 24px;
+}
+
+.edit-row {
+    padding-right: 0;
+}
+
+
+/************* FLOATING BUTTON *************/
+
+.edit-entry-btn {
+    font-size: 18px !important;
+}
+
+#circle {
+    right: 15px;
+}
+
+.entry-option-desc {
+    color: white;
+    margin-left: -20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background: #9C27B0;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    z-index: 1;
+    position: relative;
+}
+
+.entry-option-desc:hover {
+    background: #7B1FA2;
+}
+
+#circle-menu {
+    display: none;
+    margin-left: -20px;
+    margin-top: 50px;
+    white-space: nowrap;
+    text-align: center;
+}
