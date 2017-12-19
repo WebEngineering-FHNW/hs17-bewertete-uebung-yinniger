@@ -71,11 +71,8 @@ function createErrorMessage(errorJson) {
         if (i !== 0) {
             message += ' and ' + errorJson.errors[i].field;
         }
-        var input = $('input[name=' + errorJson.errors[i].field + ']');
-        if(input.length === 0) {
-            input = $('textarea[name=' + errorJson.errors[i].field + ']');
-        }
-        setFieldError(input.closest('.field'));
+        var errorField = $('[name=' + errorJson.errors[i].field + ']').closest('.field');
+        setFieldError(errorField);
     }
 
     message += ' cannot be empty';

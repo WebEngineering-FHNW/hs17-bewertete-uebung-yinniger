@@ -10,6 +10,7 @@ class UrlMappings {
             }
         }
         "/"(redirect: "/entry/index")
+        "/description"(redirect: "/static/description.html")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }
