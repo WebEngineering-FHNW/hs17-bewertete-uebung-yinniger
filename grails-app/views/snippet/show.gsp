@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
     <title>${snippet.getName()}</title>
     <tmpl:/shared/imports/>
