@@ -30,10 +30,13 @@ https://stackoverflow.com/questions/28206255/groovy-simple-json-array-builder
 
 http://google.github.io/material-design-icons/
 
+https://codepen.io/sdthornton/pen/wBZdXq
+
 Other comments: 
 
 I'm particular proud of:
-
+- the floating button
+- almost no common code
 
 ## Project grading 
 
