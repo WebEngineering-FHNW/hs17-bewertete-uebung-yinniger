@@ -9,16 +9,7 @@
 <tmpl:/shared/flash-message successMessage="Your Mistake was successfully created"/>
 <div class="container-fluid">
 
-    <div class="row header-div">
-        <div class="col-md-3"></div>
-
-        <div class="col-md-6">
-            <h2 class="header-text">
-                Create Mistake
-            </h2>
-            <i id="edit-ico" class="material-icons icon-btn">save</i>
-        </div>
-    </div>
+    <tmpl:/shared/header-create name="New Mistake"/>
 
     <input id="type" type="hidden" value="mistake"/>
 

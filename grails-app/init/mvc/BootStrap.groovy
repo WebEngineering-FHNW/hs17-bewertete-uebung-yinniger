@@ -9,23 +9,14 @@ class BootStrap {
             return
         }
 
-        Room windowRoom = save(new Room(name: "1.333", max: 32))
-        Room cornerRoom = save(new Room(name: "1.331", max: 42))
-
-        Person dierk = save(new Person(firstName: "Dierk", lastName: "König", email:"dierk.koenig@fhnw.ch"))
-
-        Date today = new Date().clearTime()
-        save(new Booking(booker: dierk, room: windowRoom, date: today - 1, slot: Booking.AM))
-        save(new Booking(booker: dierk, room: windowRoom, date: today,     slot: Booking.AM))
-        save(new Booking(booker: dierk, room: windowRoom, date: today + 1, slot: Booking.AM))
-        save(new Booking(booker: dierk, room: cornerRoom, date: today ,    slot: Booking.AM))
-
-        save(new Mistake(name: "Test", language: Entry.Language.BASH, errorMessage: "ll", solution: "ls -la"))
-        save(new Mistake(name: "Test", language: Entry.Language.BASH, errorMessage: "sido", solution: "sudo"))
-        save(new Mistake(name: "Test", language: Entry.Language.BASH, errorMessage: "docker-composer", solution: "docker-compose"))
-        save(new Mistake(name: "Test", language: Entry.Language.BASH, errorMessage: "find brot", solution: "locate brot"))
-        save(new Snippet(name: "Brot", language: Entry.Language.JAVA, snippet: "import abc.d"))
-        save(new Snippet(name: "S2", language: Entry.Language.JAVA, snippet: "int i = 0"))
+        save(new Mistake(name: "List", language: Entry.Language.BASH, errorMessage: "ll", solution: "ls -la"))
+        save(new Mistake(name: "Sudo", language: Entry.Language.BASH, errorMessage: "sido", solution: "sudo"))
+        save(new Mistake(name: "Docker", language: Entry.Language.BASH, errorMessage: "docker-composer", solution:
+                "docker-compose"))
+        save(new Mistake(name: "Locate", language: Entry.Language.BASH, errorMessage: "find brot", solution: "locate " +
+                "brot"))
+        save(new Snippet(name: "Import", language: Entry.Language.JAVA, snippet: "import abc.d"))
+        save(new Snippet(name: "Integer", language: Entry.Language.JAVA, snippet: "int i = 0"))
     }
 
     static save(domainObject) {
