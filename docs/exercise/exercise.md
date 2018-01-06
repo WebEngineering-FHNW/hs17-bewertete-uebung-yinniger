@@ -40,4 +40,15 @@ I'm particular proud of:
 
 ## Project grading 
 
-< to be filled by lecturer>
+Congratulations!
+This is a very slick application in a modern design with good user interaction.
+Interestingly, one cannot delete an entry?
+
+You could have easily scored perfectly by providing the description.html,
+include some comments, or write some tests. 
+
+I award extra points for the artistic value and the particular effort that went into
+the javascript code to make the detail page interactive.
+
+Total grade: 5.6
+
