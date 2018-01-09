@@ -50,5 +50,13 @@ include some comments, or write some tests.
 I award extra points for the artistic value and the particular effort that went into
 the javascript code to make the detail page interactive.
 
-Total grade: 5.6
+Total grade: 6.0 (was: 5.6)
+
+----
+
+Description.html was missing due to forgotten push.
+It was added and committed in time to git, though.
+Therefore, I bumped up the graduation.
+
+
 
